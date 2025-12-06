@@ -1,87 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GharSetGo - Login</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
-        }
-
-        .navbar {
-            background: #333;
-            padding: 15px;
-            color: white;
-            font-size: 20px;
-        }
-
-        .login-box {
-            width: 300px;
-            background: white;
-            padding: 20px;
-            margin: 60px auto;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .login-box h2 {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .login-box input {
-            width: 94%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #bbb;
-            border-radius: 3px;
-        }
-
-        .login-box button {
-            width: 100%;
-            padding: 10px;
-            background: #27ae60;
-            border: none;
-            color: white;
-            border-radius: 3px;
-            font-size: 15px;
-            cursor: pointer;
-        }
-
-        .login-box button:hover {
-            background: #1e8449;
-        }
-
-        .login-box p {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        a {
-            color: #27ae60;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GharSetGo - Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="navbar">GharSetGo</div>
-
-    <div class="login-box">
-        <h2>Login</h2>
-
-        <input type="text" placeholder="Email or Phone">
-        <input type="password" placeholder="Password">
-
-        <button>Login</button>
-
-        <p>Don't have an account? <a href="#">Sign Up</a></p>
+  <div class="navbar">
+    <h2>GharSetGo</h2>
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="properties.html">Properties</a>
+      <a href="login.html">Login</a>
     </div>
+  </div>
 
+  <div class="login-box">
+    <h2>Login</h2>
+
+    <input id="emailInput" type="text" placeholder="Email or Phone">
+    <input id="passwordInput" type="password" placeholder="Password">
+
+    <button id="loginBtn" disabled>Login</button>
+    <p id="emailError" class="error" style="color:#c00; font-size:0.9em; display:none; margin-top:8px;">Please enter a valid Gmail address (example@gmail.com).</p>
+
+    <p>Don't have an account? <a href="#">Sign Up</a></p>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 GharSetGo | No Brokerage. No Hassle.</p>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const emailInput = document.getElementById('emailInput');
+      const loginBtn = document.getElementById('loginBtn');
+      const emailError = document.getElementById('emailError');
+
+      // Regex to allow standard local part and exactly @gmail.com domain
+      const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+      function validate() {
+        const val = emailInput.value.trim();
+        // If empty or doesn't match gmail, disable login
+        if (!gmailRegex.test(val)) {
+          loginBtn.disabled = true;
+          emailError.style.display = val === '' ? 'none' : 'block';
+        } else {
+          loginBtn.disabled = false;
+          emailError.style.display = 'none';
+        }
+      }
+
+      // Validate on input and on blur
+      emailInput.addEventListener('input', validate);
+      emailInput.addEventListener('blur', validate);
+
+      // Prevent action if button somehow clicked while disabled
+      loginBtn.addEventListener('click', function (e) {
+        if (loginBtn.disabled) {
+          e.preventDefault();
+        }
+      });
+
+      // Initial check in case field is prefilled
+      validate();
+    });
+  </script>
 </body>
 </html>
-

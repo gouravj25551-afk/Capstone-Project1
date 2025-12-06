@@ -3,14 +3,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
 }
 
 body {
-  background: #f5f7fa;
+  background: #aeffdde0;
   color: #333;
   line-height: 1.6;
 }
+
 
 .navbar {
   background: #27ae60;
@@ -28,10 +29,16 @@ body {
   font-size: 26px;
 }
 
+/* Links wrapper */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+
 .navbar a {
   color: white;
   text-decoration: none;
-  margin-left: 25px;
   font-size: 17px;
   transition: 0.3s;
 }
@@ -40,14 +47,24 @@ body {
   opacity: 0.7;
 }
 
+/* Hamburger button (hidden on big screens) */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* ================ HERO ================= */
 
 .hero {
   height: 350px;
   background-image: url("https://images.unsplash.com/photo-1560185127-6ed57a4149c7");
-  background-size: cover;  
-  background-position: center; 
-  background-repeat: no-repeat; 
-  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,19 +74,18 @@ body {
   text-shadow: 2px 2px 10px black;
 }
 
-
-
+/* Optional animation */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
+/* ================ COMMON LAYOUT ================= */
 
 .container {
   width: 85%;
   margin: 50px auto;
 }
-
 
 .container h2 {
   margin-bottom: 15px;
@@ -77,12 +93,12 @@ body {
   color: #2c3e50;
 }
 
-
 .container p {
   font-size: 17px;
   color: #555;
 }
 
+/* ================ FEATURES (HOME PAGE) ================= */
 
 .features {
   display: grid;
@@ -109,6 +125,8 @@ body {
   font-size: 22px;
   color: #27ae60;
 }
+
+/* ================ PROPERTIES ================= */
 
 .property-card {
   background: white;
@@ -138,6 +156,7 @@ body {
   margin-bottom: 5px;
 }
 
+/* Buttons */
 
 .button {
   background: #27ae60;
@@ -155,6 +174,7 @@ body {
   background: #219150;
 }
 
+/* ================ REVIEWS ================= */
 
 .reviews {
   display: grid;
@@ -176,6 +196,65 @@ body {
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
+/* ================ LOGIN PAGE ================= */
+
+.login-box {
+  width: 320px;
+  background: white;
+  padding: 25px 20px 30px;
+  margin: 80px auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background: #27ae60;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.login-box button:hover {
+  background: #1e8449;
+}
+
+.login-box button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: grayscale(20%);
+}
+
+.login-box p {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.login-box a {
+  color: #27ae60;
+  text-decoration: none;
+}
+
+/* ================ FOOTER ================= */
 
 .footer {
   background: #27ae60;
@@ -186,9 +265,11 @@ body {
   font-size: 16px;
 }
 
+/* ================ RESPONSIVE ================= */
 
 @media (max-width: 900px) {
-  .features, .reviews {
+  .features,
+  .reviews {
     grid-template-columns: 1fr;
   }
 
@@ -202,3 +283,47 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  /* Show hamburger button */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide links by default on mobile */
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #27ae60;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    padding: 10px 20px 15px;
+    gap: 10px;
+    display: none;
+  }
+
+  .nav-links a {
+    padding: 5px 0;
+  }
+
+  /* When JS adds .show */
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hero {
+    font-size: 26px;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .login-box {
+    margin: 60px auto;
+    width: 90%;
+  }
+}
