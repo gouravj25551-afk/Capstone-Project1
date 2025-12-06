@@ -1,4 +1,4 @@
-/* Global Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,6 @@ body {
   line-height: 1.6;
 }
 
-/* Navbar */
 .navbar {
   background: #27ae60;
   padding: 18px 40px;
@@ -41,13 +40,13 @@ body {
   opacity: 0.7;
 }
 
-/* Hero Section */
+
 .hero {
   height: 350px;
   background-image: url("https://images.unsplash.com/photo-1560185127-6ed57a4149c7");
-  background-size: cover;    /* Image covers full hero area */
-  background-position: center; /* Image stays centered */
-  background-repeat: no-repeat; /* No repeating */
+  background-size: cover;  
+  background-position: center; 
+  background-repeat: no-repeat; 
   
   display: flex;
   justify-content: center;
@@ -59,32 +58,32 @@ body {
 }
 
 
-/* Fade animation */
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-/* Container */
+
 .container {
   width: 85%;
   margin: 50px auto;
 }
 
-/* Section Titles */
+
 .container h2 {
   margin-bottom: 15px;
   font-size: 30px;
   color: #2c3e50;
 }
 
-/* About text */
+
 .container p {
   font-size: 17px;
   color: #555;
 }
 
-/* Why Choose Us (3 cards) */
+
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -111,7 +110,6 @@ body {
   color: #27ae60;
 }
 
-/* Property Card */
 .property-card {
   background: white;
   padding: 20px;
@@ -140,7 +138,7 @@ body {
   margin-bottom: 5px;
 }
 
-/* Buttons */
+
 .button {
   background: #27ae60;
   padding: 12px 22px;
@@ -157,7 +155,7 @@ body {
   background: #219150;
 }
 
-/* Customer Reviews */
+
 .reviews {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -178,7 +176,7 @@ body {
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
-/* Footer */
+
 .footer {
   background: #27ae60;
   text-align: center;
@@ -188,7 +186,7 @@ body {
   font-size: 16px;
 }
 
-/* Responsive Design */
+
 @media (max-width: 900px) {
   .features, .reviews {
     grid-template-columns: 1fr;
