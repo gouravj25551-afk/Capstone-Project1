@@ -41,12 +41,10 @@
       const loginBtn = document.getElementById('loginBtn');
       const emailError = document.getElementById('emailError');
 
-      // Regex to allow standard local part and exactly @gmail.com domain
       const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
 
       function validate() {
         const val = emailInput.value.trim();
-        // If empty or doesn't match gmail, disable login
         if (!gmailRegex.test(val)) {
           loginBtn.disabled = true;
           emailError.style.display = val === '' ? 'none' : 'block';
@@ -56,18 +54,17 @@
         }
       }
 
-      // Validate on input and on blur
       emailInput.addEventListener('input', validate);
       emailInput.addEventListener('blur', validate);
 
-      // Prevent action if button somehow clicked while disabled
+
       loginBtn.addEventListener('click', function (e) {
         if (loginBtn.disabled) {
           e.preventDefault();
         }
       });
 
-      // Initial check in case field is prefilled
+    
       validate();
     });
   </script>
