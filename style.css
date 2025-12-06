@@ -29,7 +29,7 @@ body {
   font-size: 26px;
 }
 
-/* Links wrapper */
+
 .nav-links {
   display: flex;
   gap: 25px;
@@ -47,7 +47,6 @@ body {
   opacity: 0.7;
 }
 
-/* Hamburger button (hidden on big screens) */
 .menu-toggle {
   display: none;
   font-size: 24px;
@@ -56,8 +55,6 @@ body {
   color: white;
   cursor: pointer;
 }
-
-/* ================ HERO ================= */
 
 .hero {
   height: 350px;
@@ -73,15 +70,10 @@ body {
   font-weight: bold;
   text-shadow: 2px 2px 10px black;
 }
-
-/* Optional animation */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
-/* ================ COMMON LAYOUT ================= */
-
 .container {
   width: 85%;
   margin: 50px auto;
@@ -97,8 +89,6 @@ body {
   font-size: 17px;
   color: #555;
 }
-
-/* ================ FEATURES (HOME PAGE) ================= */
 
 .features {
   display: grid;
@@ -126,7 +116,6 @@ body {
   color: #27ae60;
 }
 
-/* ================ PROPERTIES ================= */
 
 .property-card {
   background: white;
@@ -156,7 +145,7 @@ body {
   margin-bottom: 5px;
 }
 
-/* Buttons */
+
 
 .button {
   background: #27ae60;
@@ -174,7 +163,6 @@ body {
   background: #219150;
 }
 
-/* ================ REVIEWS ================= */
 
 .reviews {
   display: grid;
@@ -195,8 +183,6 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
-
-/* ================ LOGIN PAGE ================= */
 
 .login-box {
   width: 320px;
@@ -254,7 +240,7 @@ body {
   text-decoration: none;
 }
 
-/* ================ FOOTER ================= */
+
 
 .footer {
   background: #27ae60;
@@ -265,7 +251,7 @@ body {
   font-size: 16px;
 }
 
-/* ================ RESPONSIVE ================= */
+
 
 @media (max-width: 900px) {
   .features,
@@ -288,12 +274,12 @@ body {
     padding: 15px 20px;
   }
 
-  /* Show hamburger button */
+
   .menu-toggle {
     display: block;
   }
 
-  /* Hide links by default on mobile */
+
   .nav-links {
     position: absolute;
     top: 60px;
@@ -311,7 +297,7 @@ body {
     padding: 5px 0;
   }
 
-  /* When JS adds .show */
+ 
   .nav-links.show {
     display: flex;
   }
