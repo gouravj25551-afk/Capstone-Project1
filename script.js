@@ -1,16 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-  // ====== HAMBURGER MENU ======
   const menuToggle = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
 
   if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () => {
       navLinks.classList.toggle("show");
-      menuToggle.classList.toggle("active"); // animate hamburger
+      menuToggle.classList.toggle("active"); 
     });
 
-    // Close menu when clicking any link (mobile)
     navLinks.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("show");
@@ -19,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ====== LOGIN BUTTON ALERT ======
   const loginBtn = document.getElementById("loginBtn");
 
   if (loginBtn) {
